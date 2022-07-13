@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../models/data.dart';
 
 class TopBar extends StatelessWidget {
-  TopBar({Key? key}) : super(key: key);
+  const TopBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,9 +68,9 @@ class TopBar extends StatelessWidget {
                   ),
                 ),
                 
-                const Chip(
-                  backgroundColor: Color.fromARGB(255, 247, 98, 115) ,
-                  label: Text('13.07.2022', style: TextStyle(
+                Chip(
+                  backgroundColor: const Color.fromARGB(255, 247, 98, 115) ,
+                  label: Text(context.watch<Data>().getData, style: const TextStyle(
                     color: Colors.white))
                 ),
 
